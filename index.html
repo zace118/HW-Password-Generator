@@ -28,17 +28,19 @@
     <script type="text/javascript"> 
         alert("Welcome to The Password Generator!")
 
-        const passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
+
         const upperCase = confirm("Do you want upper case letters in your password?");
         const lowerCase =confirm("Do you want lower case letters in your password?");
         const numbers = confirm("Do you want numbers in your password?");
         const specialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
+        const passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
 
         // passwordLength needs to be have limitations on length (between 8 and 128)
-        if (passwordLength < 8 || passwordLength > 128) {
+        if (passwordLength < 8 || passwordLength > 128 || isNan(passwordLength)) {
             alert("Please enter valid character");
         }
         // paswordLength should kick back an alert that says "Please enter a valid numerical length" if a different charater is entered OR if a number smaller than 8 or larger than 128 is entered.
+
 
         // ...now it should generate when clicked... how do I do that -___-
 
