@@ -6,9 +6,9 @@ h2 {
     text-align: center;
 }
 
-body {
-    background-image: url(https://img.freepik.com/free-photo/wall-wallpaper-concrete-colored-painted-textured-concept_53876-31799.jpg?size=626&ext=jpg);
-
+html, body {
+    background-image: url(https://www.belfontedairy.com/wp-content/uploads/2017/03/Free-Cool-Blue-Gradient-Background.jpg);
+    margin: 0;
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
