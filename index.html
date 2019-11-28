@@ -16,29 +16,52 @@
             <h1 class="display-4">Password Generator</h1>
             <p class="lead">Create a randomized password with your predetermined length, cased-characters, character styles and numbers.</p>
             <hr class="my-4">
+            <!-- Need to put these buttons in a row; col 2, buttoncol 3, col 2, buttoncol 3, col 2 -->
+        
+            <div class="row">
+                <div class="col-sm-1"></div>
 
-            <div class="button-wrapper">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Generate Password</a>
+                <div class="col-sm-4">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Generate Password</a>
+                </div>
+
+                <div class="col-sm-2"></div>
                 
-                <a class="btn btn-primary btn-lg" href="#" role="button">Copy Password</a>
+                <div class="col-sm-4">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Copy Password</a>
+                </div>
+                
+                <div class="col-sm-1"></div>
+
             </div>
         </div>
     </main>
     
     <script type="text/javascript"> 
-        alert("Welcome to The Password Generator!")
+        const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o','p', 'q', 'r', '', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 
-        const upperCase = confirm("Do you want upper case letters in your password?");
-        const lowerCase =confirm("Do you want lower case letters in your password?");
-        const numbers = confirm("Do you want numbers in your password?");
-        const specialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
-        const passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
+        // alert("Welcome to The Password Generator!")
+
+
+        // const upperCase = confirm("Do you want upper case letters in your password?");
+        // const lowerCase =confirm("Do you want lower case letters in your password?");
+        // const numbers = confirm("Do you want numbers in your password?");
+        // const specialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
+        
 
         // passwordLength needs to be have limitations on length (between 8 and 128)
-        if (passwordLength < 8 || passwordLength > 128 || isNan(passwordLength)) {
+        function showConfirm() {
+            const passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
+
+            if (passwordLength < 8 || passwordLength > 128 || passwordLength == alphabet) {
             alert("Please enter valid character");
+            }
+            else (passwordLength);
         }
+
+        showConfirm();
+        
         // paswordLength should kick back an alert that says "Please enter a valid numerical length" if a different charater is entered OR if a number smaller than 8 or larger than 128 is entered.
 
 
