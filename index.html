@@ -11,10 +11,19 @@
 </head>
 <body>
     <br/>
+    <!-- This is the jumbotron on the main page with the two buttons that give the options to generate the password and then copy the password to your clipboard -->
     <main class="container">
         <div class="jumbotron">
             <h1 class="display-4">Password Generator</h1>
             <p class="lead">Create a randomized password with your predetermined length, cased-characters, character styles and numbers.</p>
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                        <input type="text" name="Generator" id="generator-box">
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+            
             <hr class="my-4">
             <!-- Need to put these buttons in a row; col 1, buttoncol 4, col 2, buttoncol 4, col 1 -->
             <div class="row">
@@ -37,38 +46,36 @@
     </main>
     
     <script type="text/javascript"> 
-        const lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
         const upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        const lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+        const numbers = [1,2,3,4,5,6,7,8,9,0];
+        const specialCharacters = ['!',"@","#","$","%","^","&","*","<",">",'?'];
 
-        // alert("Welcome to The Password Generator!")
+    //     alert("Welcome to The Password Generator!")
 
 
-        // const upperCase = confirm("Do you want upper case letters in your password?");
-        // const lowerCase =confirm("Do you want lower case letters in your password?");
-        // const numbers = confirm("Do you want numbers in your password?");
-        const specialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
+    //     const confirmUpperCase = confirm("Do you want upper case letters in your password?");
+    //     const confirmLowerCase =confirm("Do you want lower case letters in your password?");
+    //     const confirmNumbers = confirm("Do you want numbers in your password?");
+    //     const confirmSpecialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
         
 
-    // passwordLength needs to be have limitations on length (between 8 and 128)
-    // paswordLength should kick back an alert that says "Please enter a valid numerical length" if a different charater is entered OR if a number smaller than 8 or larger than 128 is entered.
+    // // passwordLength needs to be have limitations on length (between 8 and 128)
+    // // paswordLength should kick back an alert that says "Please enter a valid numerical length" if a different charater is entered OR if a number smaller than 8 or larger than 128 is entered.
 
-        function showConfirm() {
-            const passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
+    // // CAN'T FIGURE THIS LOOP OUT. :[
 
-            if (passwordLength <= 8 || passwordLength >= 128 || passwordLength === lowerCase ) {
-            alert("Please enter valid character");
-            }
-            else (passwordLength);
-        }
+    //     function showConfirm() {
+    //         const passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
 
-        showConfirm();
+    //         if (passwordLength <= 8 || passwordLength >= 128 || passwordLength === lowerCase ) {
+    //         alert("Please enter valid character");
+    //         }
+    //         else if (showConfirm());
+    //     }
+
+    //     showConfirm();
         
-
-
-
-
-        
-
 
         // ...now it should generate when clicked... how do I do that -___-
 

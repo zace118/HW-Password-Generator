@@ -15,10 +15,6 @@ html, body {
     background-size: cover;
 }
 
-.button-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin: 10px;
+#generatorbox {
+    width: fit-content;
 }
