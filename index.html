@@ -15,7 +15,7 @@
     <main class="container">
         <div class="jumbotron">
             <h1 class="display-4">Password Generator</h1>
-            <p class="lead">Create a randomized password with your predetermined length, cased-characters, character styles and numbers.</p>
+            <p class="lead">Create a randomized password with your predetermined length, upper or lowercased characters, character styles and numbers.</p>
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
@@ -54,10 +54,10 @@
         const confirmNumbers = confirm("Do you want numbers in your password?");
         const confirmSpecialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
         
-        const upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-        const lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-        const numbers = [1,2,3,4,5,6,7,8,9,0];
-        const specialCharacters = ['!',"@","#","$","%","^","&","*","<",">",'?'];
+        let upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        let lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+        let numbers = [1,2,3,4,5,6,7,8,9,0];
+        let specialCharacters = ['!',"@","#","$","%","^","&","*","<",">",'?'];
         
 
         //This is the function to help the Copy button
@@ -79,8 +79,10 @@
 
         //This function is the final question of initial prompts. It will loop back on itself if the character is invalid. 
 
+        //The passwordLength variable isn't holding the number the user input. If we console.log it, it returns as an undefined variable.
+
         function showConfirm() {
-            const passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
+            let passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
 
             if (passwordLength >= 8 && passwordLength <= 128) {
                 alert("You chose " + passwordLength + " characters in length.");
@@ -99,28 +101,28 @@
 
         // Do I need two results of passwordLength along the lines of const invalidPasswordLength and validPasswordLength for the length to choose between?
 
-        if (confirmUpperCase === true) {
+        if (confirmUpperCase !== true) {
             // add upperCase to generatePassword const
-            console.log("eat boogers");
+            console.log("this is a place holder");
         }
-        else if (confirmLowerCase === true) {
+        else if (confirmLowerCase !== true) {
             // add lowerCase to generatePassword const
-            console.log("eat more boogers");
+            console.log("this is a place holder");
         }
-        else if (confirmNumbers === true) {
+        else if (confirmNumbers !== true) {
             // add numbers to generatePassword const
-            console.log("eat my boogers");
+            console.log("this is a place holder");
         }
-        else if (confirmSpecialCharacters === true) {
+        else if (confirmSpecialCharacters !== true) {
             //add specialCharacters to generatePassword const
-            console.log("eat ALL the boogers, booger eater");
+            console.log("this is a place holder");
         }
         else if (passwordLength) {
             //I think this is where the math.floor((math.random * upperCase.length) + (math.random * lowerCase.length) + (etc, etc...)) equation goes
-            console.log("you'sa punk ass booger eater");
+            console.log("this is a place holder");
         }
         else {
-            console.log("Thanks");
+            console.log("this is a place holder");
         }
 
 

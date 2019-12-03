@@ -6,6 +6,10 @@ h2 {
     text-align: center;
 }
 
+#lead {
+    text-align: center;
+}
+
 html, body {
     background-image: url(https://www.belfontedairy.com/wp-content/uploads/2017/03/Free-Cool-Blue-Gradient-Background.jpg);
     margin: 0;
@@ -22,3 +26,28 @@ textarea {
     margin-left: auto;
     margin-right: auto;
 }
+
+
+/* 
+if (confirmUpperCase === true) {
+    // add upperCase to generatePassword const
+    console.log("eat boogers");
+}
+else if (confirmLowerCase === true) {
+    // add lowerCase to generatePassword const
+    console.log("eat more boogers");
+}
+else if (confirmNumbers === true) {
+    // add numbers to generatePassword const
+    console.log("eat my boogers");
+}
+else if (confirmSpecialCharacters === true) {
+    //add specialCharacters to generatePassword const
+    console.log("eat ALL the boogers, booger eater");
+}
+else if (passwordLength) {
+    //I think this is where the math.floor((math.random * upperCase.length) + (math.random * lowerCase.length) + (etc, etc...)) equation goes
+    console.log("you'sa punk ass booger eater");
+}
+else {
+    console.log("Thanks"); */
