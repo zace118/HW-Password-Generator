@@ -36,7 +36,7 @@
                 <div class="col-sm-2"></div>
                 
                 <div class="col-sm-4">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Copy Password</a>
+                    <a class="btn btn-primary btn-lg" href="#" role="button" onclick="myFunction()">Copy Password</a>
                 </div>
                 
                 <div class="col-sm-1"></div>
@@ -58,6 +58,21 @@
         const lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
         const numbers = [1,2,3,4,5,6,7,8,9,0];
         const specialCharacters = ['!',"@","#","$","%","^","&","*","<",">",'?'];
+
+        function myFunction() {
+        /* Get the text field */
+            var copyText = document.getElementById("myInput");
+
+        /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+            document.execCommand("copy");
+
+        /* Alert the copied text */
+            alert("Copied the text: " + copyText.value);
+        }
 
     // passwordLength needs to be have limitations on length (between 8 and 128)
     // paswordLength should kick back an alert that says "Please enter a valid numerical length" if a different charater is entered OR if a number smaller than 8 or larger than 128 is entered.
