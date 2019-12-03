@@ -49,10 +49,10 @@
         alert("Welcome to The Password Generator!")
 
 
-        const confirmUpperCase = confirm("Do you want upper case letters in your password?");
-        const confirmLowerCase =confirm("Do you want lower case letters in your password?");
-        const confirmNumbers = confirm("Do you want numbers in your password?");
-        const confirmSpecialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
+        // const confirmUpperCase = confirm("Do you want upper case letters in your password?");
+        // const confirmLowerCase =confirm("Do you want lower case letters in your password?");
+        // const confirmNumbers = confirm("Do you want numbers in your password?");
+        // const confirmSpecialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
         
         let upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
         let lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -60,22 +60,22 @@
         let specialCharacters = ['!',"@","#","$","%","^","&","*","<",">",'?'];
         
 
+
+
         //This is the function to help the Copy button
 
         function myFunction() {
         /* Get the text field */
             let copyText = document.getElementById("generator");
-
         /* Select the text field */
             copyText.select();
             copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
         /* Copy the text inside the text field */
             document.execCommand("copy");
-
         /* Alert the copied text */
             alert("Copied the text: " + copyText.value);
         }
+
 
         //This function is the final question of initial prompts. It will loop back on itself if the character is invalid. 
 
@@ -93,7 +93,8 @@
             }
         }
         showConfirm();
-        
+
+        console.log(passwordLength);
 
         // The conditional statements that help generate the password. These will lead into a const called generatePassword whose value should be an equation with something along the lines of math.floor((math.random * upperCase.length) + (math.random * lowerCase.length) + (etc, etc...));
 
@@ -101,29 +102,29 @@
 
         // Do I need two results of passwordLength along the lines of const invalidPasswordLength and validPasswordLength for the length to choose between?
 
-        if (confirmUpperCase !== true) {
-            // add upperCase to generatePassword const
-            console.log("this is a place holder");
-        }
-        else if (confirmLowerCase !== true) {
-            // add lowerCase to generatePassword const
-            console.log("this is a place holder");
-        }
-        else if (confirmNumbers !== true) {
-            // add numbers to generatePassword const
-            console.log("this is a place holder");
-        }
-        else if (confirmSpecialCharacters !== true) {
-            //add specialCharacters to generatePassword const
-            console.log("this is a place holder");
-        }
-        else if (passwordLength) {
-            //I think this is where the math.floor((math.random * upperCase.length) + (math.random * lowerCase.length) + (etc, etc...)) equation goes
-            console.log("this is a place holder");
-        }
-        else {
-            console.log("this is a place holder");
-        }
+        // if (confirmUpperCase !== true) {
+        //     // add upperCase to generatePassword const
+        //     console.log("this is a place holder");
+        // }
+        // else if (confirmLowerCase !== true) {
+        //     // add lowerCase to generatePassword const
+        //     console.log("this is a place holder");
+        // }
+        // else if (confirmNumbers !== true) {
+        //     // add numbers to generatePassword const
+        //     console.log("this is a place holder");
+        // }
+        // else if (confirmSpecialCharacters !== true) {
+        //     //add specialCharacters to generatePassword const
+        //     console.log("this is a place holder");
+        // }
+        // else if (passwordLength) {
+        //     //I think this is where the math.floor((math.random * upperCase.length) + (math.random * lowerCase.length) + (etc, etc...)) equation goes
+        //     console.log("this is a place holder");
+        // }
+        // else {
+        //     console.log("this is a place holder");
+        // }
 
 
 
