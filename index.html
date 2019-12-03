@@ -49,19 +49,20 @@
         alert("Welcome to The Password Generator!")
 
 
-        // const confirmUpperCase = confirm("Do you want upper case letters in your password?");
-        // const confirmLowerCase =confirm("Do you want lower case letters in your password?");
-        // const confirmNumbers = confirm("Do you want numbers in your password?");
-        // const confirmSpecialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
+        const confirmUpperCase = confirm("Do you want upper case letters in your password?");
+        const confirmLowerCase =confirm("Do you want lower case letters in your password?");
+        const confirmNumbers = confirm("Do you want numbers in your password?");
+        const confirmSpecialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
         
-        let upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-        let lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-        let numbers = [1,2,3,4,5,6,7,8,9,0];
-        let specialCharacters = ['!',"@","#","$","%","^","&","*","<",">",'?'];
+        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let results = ' ';
         
+        // indexOf and includes
+        // make an array for numbers and special characters
 
 
-
+        
+        
         //This is the function to help the Copy button
 
         function myFunction() {
@@ -83,18 +84,24 @@
 
         function showConfirm() {
             let passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
-
+            parseInt(passwordLength);
             if (passwordLength >= 8 && passwordLength <= 128) {
                 alert("You chose " + passwordLength + " characters in length.");
+                return passwordLength;
             }
-            else {
+        
                 alert("Please enter valid character");
                 showConfirm();
-            }
+                return false;
         }
-        showConfirm();
+        // showConfirm();
+        let finalLength = showConfirm();
+        
 
-        console.log(passwordLength);
+        for ( var i = 0; i < finalLength; i++ ) {
+            results += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        
 
         // The conditional statements that help generate the password. These will lead into a const called generatePassword whose value should be an equation with something along the lines of math.floor((math.random * upperCase.length) + (math.random * lowerCase.length) + (etc, etc...));
 
@@ -102,14 +109,17 @@
 
         // Do I need two results of passwordLength along the lines of const invalidPasswordLength and validPasswordLength for the length to choose between?
 
-        // if (confirmUpperCase !== true) {
-        //     // add upperCase to generatePassword const
-        //     console.log("this is a place holder");
-        // }
-        // else if (confirmLowerCase !== true) {
-        //     // add lowerCase to generatePassword const
-        //     console.log("this is a place holder");
-        // }
+        if (confirmUpperCase !== true) {
+            let lowerCaseResults = results.toLowerCase();
+        }
+        if (confirmLowerCase !== true) {
+            let upperCaseResults = results.toUpperCase();
+            console.log(upperCaseResults);
+        }
+        if (confirmUpperCase !== true && confirmLowerCase !== true) {
+            let thisIsWeird;
+        }
+
         // else if (confirmNumbers !== true) {
         //     // add numbers to generatePassword const
         //     console.log("this is a place holder");
@@ -126,6 +136,11 @@
         //     console.log("this is a place holder");
         // }
 
+        let generatePassword;
+
+        // if (!confirmUpperCase) {
+
+        // }
 
 
     </script> 
