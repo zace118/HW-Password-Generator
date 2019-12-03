@@ -46,38 +46,60 @@
     </main>
     
     <script type="text/javascript"> 
+        alert("Welcome to The Password Generator!")
+
+
+        const confirmUpperCase = confirm("Do you want upper case letters in your password?");
+        const confirmLowerCase =confirm("Do you want lower case letters in your password?");
+        const confirmNumbers = confirm("Do you want numbers in your password?");
+        const confirmSpecialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
+        
         const upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
         const lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
         const numbers = [1,2,3,4,5,6,7,8,9,0];
         const specialCharacters = ['!',"@","#","$","%","^","&","*","<",">",'?'];
 
-    //     alert("Welcome to The Password Generator!")
+    // passwordLength needs to be have limitations on length (between 8 and 128)
+    // paswordLength should kick back an alert that says "Please enter a valid numerical length" if a different charater is entered OR if a number smaller than 8 or larger than 128 is entered.
 
+    // CAN'T FIGURE THIS LOOP OUT. :[
+    
+    // Do I need two results of passwordLength along the lines of const invalidPasswordLength and validPasswordLength for the length to choose between?
+        function showConfirm() {
+            const passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
 
-    //     const confirmUpperCase = confirm("Do you want upper case letters in your password?");
-    //     const confirmLowerCase =confirm("Do you want lower case letters in your password?");
-    //     const confirmNumbers = confirm("Do you want numbers in your password?");
-    //     const confirmSpecialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
+            if (passwordLength <= 8 || passwordLength >= 128 || passwordLength === lowerCase ) {
+            alert("Please enter valid character");
+            }
+            else if (showConfirm());
+        }
+
+        showConfirm();
         
 
-    // // passwordLength needs to be have limitations on length (between 8 and 128)
-    // // paswordLength should kick back an alert that says "Please enter a valid numerical length" if a different charater is entered OR if a number smaller than 8 or larger than 128 is entered.
+        // The conditional statements that help generate the password. These will lead into a const called generatePassword whose value should be an equation with something along the lines of math.floor((math.random * upperCase.length) + (math.random * lowerCase.length) + (etc, etc...));
 
-    // // CAN'T FIGURE THIS LOOP OUT. :[
+        // The console.logs listed below are placeholders until I figure out wtf I'm actually doing....
 
-    //     function showConfirm() {
-    //         const passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
+        if (confirmUpperCase === true) {
+            // add upperCase to generatePassword const
+            console.log("eat boogers");
+        }
+        else if (confirmLowerCase === true) {
+            // add lowerCase to generatePassword const
+            console.log("eat more boogers");
+        }
+        else if (confirmNumbers === true) {
+            // add numbers to generatePassword const
+            console.log("eat my boogers");
+        }
+        else if (confirmSpecialCharacters === true) {
+            //add specialCharacters to generatePassword const
+            console.log("eat ALL the boogers, booger eater");
+        }
+        else if (passwordLength)
 
-    //         if (passwordLength <= 8 || passwordLength >= 128 || passwordLength === lowerCase ) {
-    //         alert("Please enter valid character");
-    //         }
-    //         else if (showConfirm());
-    //     }
 
-    //     showConfirm();
-        
-
-        // ...now it should generate when clicked... how do I do that -___-
 
     </script> 
 
