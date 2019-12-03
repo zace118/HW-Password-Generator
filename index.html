@@ -25,7 +25,7 @@
             </div>
             
             <hr class="my-4">
-            <!-- Need to put these buttons in a row; col 1, buttoncol 4, col 2, buttoncol 4, col 1 -->
+        
             <div class="row">
                 <div class="col-sm-1"></div>
 
@@ -64,7 +64,7 @@
 
         function myFunction() {
         /* Get the text field */
-            let copyText = document.getElementById("myInput");
+            let copyText = document.getElementById("generator");
 
         /* Select the text field */
             copyText.select();
@@ -77,10 +77,8 @@
             alert("Copied the text: " + copyText.value);
         }
 
-    // passwordLength needs to be have limitations on length (between 8 and 128)
-    // paswordLength should kick back an alert that says "Please enter a valid numerical length" if a different charater is entered OR if a number smaller than 8 or larger than 128 is entered.
-    
-    // Do I need two results of passwordLength along the lines of const invalidPasswordLength and validPasswordLength for the length to choose between?
+        //This function is the final question of initial prompts. It will loop back on itself if the character is invalid. 
+
         function showConfirm() {
             const passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
 
@@ -98,6 +96,8 @@
         // The conditional statements that help generate the password. These will lead into a const called generatePassword whose value should be an equation with something along the lines of math.floor((math.random * upperCase.length) + (math.random * lowerCase.length) + (etc, etc...));
 
         // The console.logs listed below are placeholders until I figure out wtf I'm actually doing....
+
+        // Do I need two results of passwordLength along the lines of const invalidPasswordLength and validPasswordLength for the length to choose between?
 
         if (confirmUpperCase === true) {
             // add upperCase to generatePassword const
