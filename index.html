@@ -56,18 +56,12 @@
 
         //Build your arrays and then make an array that holds all of those arrays??
 
-        let upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-        let lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-        let numbers = ['1','2','3','4','5','6','7','8','9','0'];
-        let specialCharacters = ['!','@','#','$','%','^','&','*','<','>','?'];
-        let characters = [upperCase, lowerCase, numbers, specialCharacters];
-        let results = ' ';
-        
-        // indexOf and includes
-        // make an array for numbers and special characters
-
-
-
+        let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let lowerCase = "abcdefghijklmnopqrstuvwxyz";
+        let numbers = "1234567890";
+        let specialCharacters = "!@#$%^&*<>?";
+        let characters = '';
+        let results = '';
         
         /*This is the function to help the Copy button*/
 
@@ -82,7 +76,6 @@
         /* Alert the copied text */
             alert("Copied the text: " + copyText.value);
         }
-
 
         /*This function is the final question of initial prompts. It will loop back on itself if the character is invalid.*/ 
 
@@ -99,53 +92,30 @@
                 return false;
         }
         let finalLength = showConfirm();
-        
+
+        //These if statements will concatenate to build the final string that will go into the formula on line 113.
+
+        if (confirmUpperCase === true) {
+            characters = (characters += upperCase);
+        }
+        if (confirmLowerCase === true) {
+            characters = (characters += lowerCase);
+        }
+        if (confirmNumbers === true) {
+            characters = (characters += numbers);
+        }
+        if (confirmSpecialCharacters === true) {
+            characters = (characters += specialCharacters);
+        }
+
+        //This formula takes the user's specified length (finalLength) and also takes 
 
         for (var i = 0; i < finalLength; i++ ) {
             results += characters.charAt(Math.floor(Math.random() * characters.length));
         }
-        
-        console.log(reults);
 
-        // The conditional statements that help generate the password. These will lead into a const called generatePassword whose value should be an equation with something along the lines of math.floor((math.random * upperCase.length) + (math.random * lowerCase.length) + (etc, etc...));
-
-        // The console.logs listed below are placeholders until I figure out wtf I'm actually doing....
-
-        // Do I need two results of passwordLength along the lines of const invalidPasswordLength and validPasswordLength for the length to choose between?
-
-        if (confirmUpperCase !== true) {
-            let lowerCaseResults = results.toLowerCase();
-        }
-        if (confirmLowerCase !== true) {
-            let upperCaseResults = results.toUpperCase();
-            console.log(upperCaseResults);
-        }
-        // if (confirmUpperCase !== true && confirmLowerCase !== true) {
-        //     let thisIsWeird;
-        // }
-
-        // else if (confirmNumbers !== true) {
-        //     // add numbers to generatePassword const
-        //     console.log("this is a place holder");
-        // }
-        // else if (confirmSpecialCharacters !== true) {
-        //     //add specialCharacters to generatePassword const
-        //     console.log("this is a place holder");
-        // }
-        // else if (passwordLength) {
-        //     //I think this is where the math.floor((math.random * upperCase.length) + (math.random * lowerCase.length) + (etc, etc...)) equation goes
-        //     console.log("this is a place holder");
-        // }
-        // else {
-        //     console.log("this is a place holder");
-        // }
-
-        let generatePassword;
-
-        // if (!confirmUpperCase) {
-
-        // }
-
+        document.getElementById('generator').innerHTML = results;
+        console.log(results);
 
     </script> 
 
