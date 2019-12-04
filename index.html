@@ -53,17 +53,23 @@
         const confirmLowerCase =confirm("Do you want lower case letters in your password?");
         const confirmNumbers = confirm("Do you want numbers in your password?");
         const confirmSpecialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
-        
-        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+        //Build your arrays and then make an array that holds all of those arrays??
+
+        let upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        let lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+        let numbers = ['1','2','3','4','5','6','7','8','9','0'];
+        let specialCharacters = ['!','@','#','$','%','^','&','*','<','>','?'];
+        let characters = [upperCase, lowerCase, numbers, specialCharacters];
         let results = ' ';
         
         // indexOf and includes
         // make an array for numbers and special characters
 
 
+
         
-        
-        //This is the function to help the Copy button
+        /*This is the function to help the Copy button*/
 
         function myFunction() {
         /* Get the text field */
@@ -78,9 +84,7 @@
         }
 
 
-        //This function is the final question of initial prompts. It will loop back on itself if the character is invalid. 
-
-        //The passwordLength variable isn't holding the number the user input. If we console.log it, it returns as an undefined variable.
+        /*This function is the final question of initial prompts. It will loop back on itself if the character is invalid.*/ 
 
         function showConfirm() {
             let passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
@@ -94,14 +98,14 @@
                 showConfirm();
                 return false;
         }
-        // showConfirm();
         let finalLength = showConfirm();
         
 
-        for ( var i = 0; i < finalLength; i++ ) {
+        for (var i = 0; i < finalLength; i++ ) {
             results += characters.charAt(Math.floor(Math.random() * characters.length));
         }
         
+        console.log(reults);
 
         // The conditional statements that help generate the password. These will lead into a const called generatePassword whose value should be an equation with something along the lines of math.floor((math.random * upperCase.length) + (math.random * lowerCase.length) + (etc, etc...));
 
@@ -116,9 +120,9 @@
             let upperCaseResults = results.toUpperCase();
             console.log(upperCaseResults);
         }
-        if (confirmUpperCase !== true && confirmLowerCase !== true) {
-            let thisIsWeird;
-        }
+        // if (confirmUpperCase !== true && confirmLowerCase !== true) {
+        //     let thisIsWeird;
+        // }
 
         // else if (confirmNumbers !== true) {
         //     // add numbers to generatePassword const
