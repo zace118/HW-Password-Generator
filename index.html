@@ -45,16 +45,10 @@
         </div>
     </main>
     
-    <script type="text/javascript"> 
-        alert("Welcome to The Password Generator!")
+    <script type="text/javascript">
+    //Variables
 
-
-        const confirmUpperCase = confirm("Do you want upper case letters in your password?");
-        const confirmLowerCase =confirm("Do you want lower case letters in your password?");
-        const confirmNumbers = confirm("Do you want numbers in your password?");
-        const confirmSpecialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
-
-        //Build your arrays and then make an array that holds all of those arrays??
+        const generateEl = document.getElementById("generate")
 
         let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         let lowerCase = "abcdefghijklmnopqrstuvwxyz";
@@ -62,20 +56,19 @@
         let specialCharacters = "!@#$%^&*<>?";
         let characters = '';
         let results = '';
-        
-        /*This is the function to help the Copy button*/
 
-        function myFunction() {
-        /* Get the text field */
-            let copyText = document.getElementById("generator");
-        /* Select the text field */
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-        /* Copy the text inside the text field */
-            document.execCommand("copy");
-        /* Alert the copied text */
-            alert("Copied the text: " + copyText.value);
-        }
+
+
+    generateEl.addEventListener('click', () => {
+        // This begins our prompts for the user
+
+        alert("Welcome to The Password Generator!")
+
+
+        const confirmUpperCase = confirm("Do you want upper case letters in your password?");
+        const confirmLowerCase =confirm("Do you want lower case letters in your password?");
+        const confirmNumbers = confirm("Do you want numbers in your password?");
+        const confirmSpecialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
 
         /*This function is the final question of initial prompts. It will loop back on itself if the character is invalid.*/ 
 
@@ -93,7 +86,7 @@
         }
         let finalLength = showConfirm();
 
-        //These if statements will concatenate to build the final string that will go into the formula on line 113.
+         //These if statements will concatenate to build the final string that will go into the formula on line 113.
 
         if (confirmUpperCase === true) {
             characters = (characters += upperCase);
@@ -108,14 +101,38 @@
             characters = (characters += specialCharacters);
         }
 
-        //This formula takes the user's specified length (finalLength) and also takes 
+        //This is the formula that randomizes the password (results)
 
         for (var i = 0; i < finalLength; i++ ) {
             results += characters.charAt(Math.floor(Math.random() * characters.length));
         }
 
+
+
         document.getElementById('generator').innerHTML = results;
         console.log(results);
+        
+    })
+
+        /*This is the function to help the Copy button*/
+
+        function myFunction() {
+        /* Get the text field */
+            let copyText = document.getElementById("generator");
+        /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+        /* Copy the text inside the text field */
+            document.execCommand("copy");
+        /* Alert the copied text */
+            alert("Copied the text: " + copyText.value);
+        }
+
+       //This formula takes the user's specified length (finalLength) and also takes 
+
+       
+
+        
 
     </script> 
 
