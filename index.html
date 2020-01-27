@@ -1,141 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+      integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
 
     <title>Password Generator</title>
-</head>
-<body>
-    <br/>
+  </head>
+  <body>
+    <br />
     <!-- This is the jumbotron on the main page with the two buttons that give the options to generate the password and then copy the password to your clipboard -->
     <main class="container">
-        <div class="jumbotron">
-            <h1 class="display-4">Password Generator</h1>
-            <p class="lead">Create a randomized password with your predetermined length, upper or lowercased characters, character styles and numbers.</p>
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-                        <textarea name="Password Generator" id="generator" cols="30" rows="10"></textarea>
-                </div>
-                <div class="col-sm-3"></div>
-            </div>
-            
-            <hr class="my-4">
-        
-            <div class="row">
-                <div class="col-sm-1"></div>
-
-                <div class="col-sm-4">
-                    <a class="btn btn-primary btn-lg" href="#" role="button" id="generate" >Generate Password</a>
-                </div>
-
-                <div class="col-sm-2"></div>
-                
-                <div class="col-sm-4">
-                    <a class="btn btn-primary btn-lg" href="#" role="button" onclick="myFunction()">Copy Password</a>
-                </div>
-                
-                <div class="col-sm-1"></div>
-
-            </div>
+      <div class="jumbotron">
+        <h1 class="display-4">Password Generator</h1>
+        <p class="lead">
+          Create a randomized password with your predetermined length, upper or
+          lowercased characters, character styles and numbers.
+        </p>
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6">
+            <textarea
+              name="Password Generator"
+              id="generator"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <div class="col-sm-3"></div>
         </div>
+
+        <hr class="my-4" />
+
+        <div class="row">
+          <div class="col-sm-1"></div>
+
+          <div class="col-sm-4">
+            <a
+              class="btn btn-primary btn-lg"
+              href="#"
+              role="button"
+              id="generate"
+              >Generate Password</a
+            >
+          </div>
+
+          <div class="col-sm-2"></div>
+
+          <div class="col-sm-4">
+            <a
+              class="btn btn-primary btn-lg"
+              href="#"
+              role="button"
+              onclick="myFunction()"
+              >Copy Password</a
+            >
+          </div>
+
+          <div class="col-sm-1"></div>
+        </div>
+      </div>
     </main>
-    
+
     <script type="text/javascript">
-    //Variables
+      //Variables
 
-        const generateEl = document.getElementById("generate")
+      const generateEl = document.getElementById("generate");
 
-        let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        let lowerCase = "abcdefghijklmnopqrstuvwxyz";
-        let numbers = "1234567890";
-        let specialCharacters = "!@#$%^&*<>?";
-        let characters = '';
-        let results = '';
+      let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      let lowerCase = "abcdefghijklmnopqrstuvwxyz";
+      let numbers = "1234567890";
+      let specialCharacters = "!@#$%^&*<>?";
+      let characters = "";
+      let results = "";
 
+      generateEl.addEventListener("click", () => {
+        $('#generator').val('');
 
-
-    generateEl.addEventListener('click', () => {
         // This begins our prompts for the user
-
-        alert("Welcome to The Password Generator!")
-
+        alert("Welcome to The Password Generator!");
 
         const confirmUpperCase = confirm("Do you want upper case letters in your password?");
-        const confirmLowerCase =confirm("Do you want lower case letters in your password?");
+        const confirmLowerCase = confirm("Do you want lower case letters in your password?");
         const confirmNumbers = confirm("Do you want numbers in your password?");
         const confirmSpecialCharacters = confirm("Do you want special characters, such as @ # $ !, in your password?");
 
-        /*This function is the final question of initial prompts. It will loop back on itself if the character is invalid.*/ 
+        /*This function is the final question of initial prompts. It will loop back on itself if the character is invalid.*/
 
         function showConfirm() {
-            let passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
-            parseInt(passwordLength);
-            if (passwordLength >= 8 && passwordLength <= 128) {
-                alert("You chose " + passwordLength + " characters in length.");
-                return passwordLength;
-            }
-        
-                alert("Please enter valid character");
-                showConfirm();
-                return false;
+          let passwordLength = prompt("How many characters do you want in your password? Minimum 8, Maximum 128.");
+          parseInt(passwordLength);
+
+          if (passwordLength >= 8 && passwordLength <= 128) {
+            alert("You chose " + passwordLength + " characters in length.");
+            return passwordLength;
+          }
+
+          alert("Please enter valid character");
+          showConfirm();
+          return false;
         }
+
         let finalLength = showConfirm();
 
-         //These if statements will concatenate to build the final string that will go into the formula on line 113.
+        //These if statements will concatenate to build the final string that will go into the following if statement.
 
         if (confirmUpperCase === true) {
-            characters = (characters += upperCase);
+          characters = characters += upperCase;
         }
         if (confirmLowerCase === true) {
-            characters = (characters += lowerCase);
+          characters = characters += lowerCase;
         }
         if (confirmNumbers === true) {
-            characters = (characters += numbers);
+          characters = characters += numbers;
         }
         if (confirmSpecialCharacters === true) {
-            characters = (characters += specialCharacters);
+          characters = characters += specialCharacters;
         }
 
         //This is the formula that randomizes the password (results)
 
-        for (var i = 0; i < finalLength; i++ ) {
-            results += characters.charAt(Math.floor(Math.random() * characters.length));
+        for (var i = 0; i < finalLength; i++) {
+          results += characters.charAt(
+            Math.floor(Math.random() * characters.length)
+          );
         }
 
-
-
-        document.getElementById('generator').innerHTML = results;
+        document.getElementById("generator").innerHTML = results;
         console.log(results);
-        
-    })
+      });
 
-        /*This is the function to help the Copy button*/
-
-        function myFunction() {
+      /*This is the function to help the Copy button*/
+      function myFunction() {
         /* Get the text field */
-            let copyText = document.getElementById("generator");
+        let copyText = document.getElementById("generator");
         /* Select the text field */
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
         /* Copy the text inside the text field */
-            document.execCommand("copy");
+        document.execCommand("copy");
         /* Alert the copied text */
-            alert("Copied the text: " + copyText.value);
-        }
+        alert("Copied the text: " + copyText.value);
+      }
 
-       //This formula takes the user's specified length (finalLength) and also takes 
-
-       
-
-        
-
-    </script> 
-
-    
-</body>
+      // This will clear the jumbotron
+      // document.getElementById('generator').value = '';
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </body>
 </html>
