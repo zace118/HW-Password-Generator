@@ -1,7 +1,7 @@
 # [Password Generator](https://zace118.github.io/HW-Password-Generator/)
 This app generates a randomized password between 8 and 128 characters. The user gets to choose length and character types. I built a button that will activate the app to begin asking the user for their specific parameters on the password. The program generates a random password based on those answers, randomizes it, and places it in the jumbotron. There is another button for the user to click on and copy the password out of the text area.
 
-![Password Generator](/Password_Generator.png)
+![Password Generator](/Password_Generator.gif)
 
 ## Built With
  
