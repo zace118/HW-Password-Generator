@@ -12,12 +12,9 @@ h2 {
 
 html,
 body {
-  background-image: url(https://www.belfontedairy.com/wp-content/uploads/2017/03/Free-Cool-Blue-Gradient-Background.jpg);
+  background-color: steelblue;
   margin: 0;
   height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 textarea {
