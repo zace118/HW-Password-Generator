@@ -69,6 +69,7 @@
         let results = "";
 
         generateEl.addEventListener("click", () => {
+            // Clear the board if there's anything else in it
             $('#textArea').val('');
 
             // This begins our prompts for the user
@@ -118,8 +119,11 @@
                 );
             }
 
+            // Clear the board if there's anything else in it
+            $('#textArea').val('');
+
             // This posts the password into the text area
-            $("textArea").val(results);
+            $("#textArea").val(results);
         });
 
         /*This is the function to help the Copy button*/
